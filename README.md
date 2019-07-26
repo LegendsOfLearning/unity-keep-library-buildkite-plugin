@@ -11,8 +11,10 @@ Set these environmental variables:
 # Defaults to /tmp
 CACHE_DIR
 
-# Defaults to pwd
+# Defaults to ""
+# This is appended to ${BUILDKITE_BUILD_CHECKOUT_PATH} 
 UNITY_PROJECT_PATH 
+
 ```
 
 ## TODO
