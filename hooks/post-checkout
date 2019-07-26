@@ -1,0 +1,17 @@
+#!/bin/bash
+set -euo pipefail
+
+# Defaults
+CACHE_DIR=${CACHE_DIR:-/tmp}
+UNITY_PROJECT_PATH=${UNITY_PROJECT_PATH:-$(pwd)}
+CACHE_FILE=${CACHE_DIR}/${BUILDKITE_PIPELINE_SLUG}-${BUILDKITE_COMMIT}.${BUILDKITE_JOB_ID}.tar.gz
+LIBRARY_PATH=${UNITY_PROJECT_PATH}/Library
+
+
+echo "---Reloading Unity asset library"
+echo "Library path: ${LIBRARY_PATH}"
+echo "Cache path: ${CACHE_FILE}"
+
+set -x
+tar -zxvf ${CACHE_FILE} ${LIBRARY_PATH}
+rm -f ${CACHE_FILE}

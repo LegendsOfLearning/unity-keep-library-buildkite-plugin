@@ -1,0 +1,7 @@
+name: unity-keep-library
+description: Preserve asset library between builds
+author: Ho-Sheng Hsiao (https://github.com/hosh)
+requirements:
+configuration:
+  properties: {}
+  additionalProperties: false
