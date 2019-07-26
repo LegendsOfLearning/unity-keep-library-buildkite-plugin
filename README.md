@@ -9,7 +9,7 @@ Set these environmental variables:
 # Optional
 
 # Defaults to /tmp
-CACHE_DIR
+UNITY_LIBRARY_CACHE_DIR
 
 # Defaults to ""
 # This is appended to ${BUILDKITE_BUILD_CHECKOUT_PATH} 
