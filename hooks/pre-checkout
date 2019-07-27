@@ -12,6 +12,12 @@ echo "---Caching Unity asset library"
 echo "Library path: ${LIBRARY_PATH}"
 echo "Cache path: ${CACHE_FILE}"
 
+if [[ ! -f ${LIBRARY_PATH} ]]; then
+  echo "No library found at ${LIBRARY_PATH}"
+  echo "Skipping."
+  exit 0
+fi
+
 set -x
 tar -zcvf ${CACHE_FILE} ${LIBRARY_PATH}
 

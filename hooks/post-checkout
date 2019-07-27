@@ -12,6 +12,12 @@ echo "---Reloading Unity asset library"
 echo "Library path: ${LIBRARY_PATH}"
 echo "Cache path: ${CACHE_FILE}"
 
+if [[ ! -f ${CACHE_FILE} ]]; then
+  echo "No cache tarball found at ${CACHE_FILE}"
+  echo "Skipping."
+  exit 0
+fi
+
 set -x
-tar -zxvf ${CACHE_FILE} ${LIBRARY_PATH}
+tar -zxvf ${CACHE_FILE}
 rm -f ${CACHE_FILE}
